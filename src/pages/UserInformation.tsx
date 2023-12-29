@@ -66,7 +66,7 @@ export const UserInformation = () => {
         <h3 className='text-[#ff3f3f] text-3xl my-5'>Favorite Games</h3>
         <div className='grid grid-cols-4 gap-x-6 mx-5'>
           {favoriteGames && favoriteGames.map((game) => (
-            <div className='max-w-1/4'>
+            <div className='max-w-1/4' key={game.slug}>
               <Link to={`/${game.slug}`} onClick={() => navigate(`/game/${game.slug}`)}>
                 <GameCard game={game} isProfile={true} />
               </Link>

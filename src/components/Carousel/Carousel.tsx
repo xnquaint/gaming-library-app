@@ -32,7 +32,7 @@ export const Carousel: React.FC<Props> = ({ games }) => {
     <div className="overflow-hidden mt-4 relative">
       <div className="flex justify-between items-center">
         {images.map((image, index) => (
-          <Link to={`game/${games[index]?.slug}`}
+          <Link to={`game/${games[index]?.slug}`} key={index}
             className={`w-1/3 ${index === currentImageIndex ? 'blur-none' : 'blur'
               } transition-blur duration-500 ease-in-out`}
           >

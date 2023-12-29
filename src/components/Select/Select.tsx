@@ -59,13 +59,13 @@ export const SelectComponent: React.FC<Props> = ({ filterName, filters, setFilte
 
         >
           <option selected>{`Select ${filterName}`}</option>
-          {filters?.map(f => (<option value={f.name}>{f.name}</option>))}
+          {filters?.map(f => (<option value={f.name} key={f.id}>{f.name}</option>))}
         </select>
         <div className='mb-3'>
           <button type="button" onClick={handleReset} className="w-9 h-5 mb-2 bg-black border border-[#de004e] rounded-md inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
             <span className="sr-only">Close menu</span>
             <svg className="h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              <path stroke-linecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>

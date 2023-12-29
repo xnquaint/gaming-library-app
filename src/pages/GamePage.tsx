@@ -73,7 +73,7 @@ export const GamePage = () => {
         console.error("Error adding comment: ", error);
       } finally {
         setCommentText('');
-        setIsDisabled(false); 11
+        setIsDisabled(false);
       }
     };
 
