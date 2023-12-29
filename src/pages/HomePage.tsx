@@ -102,7 +102,7 @@ export const HomePage = () => {
           throw error;
         })
     }
-  }, []);
+  });
 
   const handleFilterChange = (filterName: string, filterValue: string) => {
     const searchParams = new URLSearchParams(location.search);
