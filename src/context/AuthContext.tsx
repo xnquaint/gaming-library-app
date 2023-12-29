@@ -8,17 +8,19 @@ interface Props {
   children?: ReactNode
 }
 
-export const AuthContext = createContext({
-  currentUser: {} as User | null,
-  setCurrentUser: (_user: User | null) => { },
-  signOut: () => { },
-  isUpdated: false,
-  setIsUpdated: ( _q: boolean ) => { },
-  nickname: '',
-  setNickname: (_q: string) => { },
-  avatarURL: '',
-  setAvatarURL: (_q: string) => { },
-});
+interface AuthContextInterface {
+  currentUser: User | null,
+  setCurrentUser: (_user: User | null) => void,
+  signOut: () => void,
+  isUpdated: boolean,
+  setIsUpdated: ( _q: boolean ) => void,
+  nickname: string,
+  setNickname: (_q: string) => void,
+  avatarURL: string,
+  setAvatarURL: (_q: string) => void,
+
+}
+export const AuthContext = createContext({} as AuthContextInterface);
 
 export const AuthProvider = ({ children }: Props) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);

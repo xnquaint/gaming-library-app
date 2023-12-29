@@ -30,7 +30,9 @@ export const Header = () => {
     navigate(`?search=${debouncedSearchTerm}`);
   }, [debouncedSearchTerm, setSearch, navigate]);
 
-  useEffect(() => { }, [isUpdated]);
+  useEffect(() => {
+    console.log('rerendered', isUpdated);
+  }, [isUpdated, avatarURL]);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSearchTerm = event.target.value;
@@ -47,7 +49,6 @@ export const Header = () => {
 
   const getLink = currentUser ? '/profile' : '/authentication';
 
-  useEffect(() => { }, [avatarURL]);
   return (
     <>
       <header className="flex items-center justify-between px-8 py-4 bg-[#000] text-white">
@@ -72,9 +73,9 @@ export const Header = () => {
         </form>
         <Link to={getLink}>
           {currentUser && (<img className="w-10 h-10 rounded-full" src={
-            currentUser.photoURL 
-            ? `${currentUser.photoURL}?${Date.now()}` 
-            :  tempAvatar
+            currentUser.photoURL
+              ? `${currentUser.photoURL}?${Date.now()}`
+              : tempAvatar
           } alt="Rounded avatar" />)}
           {!currentUser && (<img className="w-10 h-10 rounded-full" src={tempAvatar} alt="Rounded avatar" />)}
         </Link>

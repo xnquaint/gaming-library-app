@@ -45,7 +45,9 @@ export const SelectComponent: React.FC<Props> = ({ filterName, filters, setFilte
     navigate({ search: searchParams.toString() });
   };
 
-  useEffect(() => { }, [initialFilterValue]);
+  useEffect(() => { 
+    console.log('initialFilterValue', initialFilterValue);
+  }, [initialFilterValue]);
 
   return (
     <>

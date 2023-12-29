@@ -25,7 +25,7 @@ export const AuthenticationDetails = () => {
     return () => {
       listen();
     };
-  }, []);
+  });
 
   const userSignOut = () => {
     signOut(auth)
