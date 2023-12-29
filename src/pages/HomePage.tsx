@@ -4,7 +4,7 @@ import axios from 'axios';
 import { GameInterface } from '../types/GameInterface';
 import {  Filter } from '../types/Filter';
 import { ApiResponseInterface } from '../types/ApiResponseInterface';
-import { SelectComponent } from '../components/Select/Select';
+import { SelectComponent } from '../components/SelectComponent/SelectComponent';
 import { Carousel } from '../components/Carousel/Carousel';
 import { GamesList } from '../components/GamesList/GamesList';
 import useLocalStorageState from 'use-local-storage-state';

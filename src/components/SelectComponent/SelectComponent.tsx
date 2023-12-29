@@ -58,7 +58,7 @@ export const SelectComponent: React.FC<Props> = ({ filterName, filters, setFilte
           onChange={handleChange}
 
         >
-          <option selected>{`Select ${filterName}`}</option>
+          <option defaultValue={''}>{`Select ${filterName}`}</option>
           {filters?.map(f => (<option value={f.name} key={f.id}>{f.name}</option>))}
         </select>
         <div className='mb-3'>
