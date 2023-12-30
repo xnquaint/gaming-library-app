@@ -39,11 +39,11 @@ export const SignUp = () => {
     try {
       // Send the email and password to firebase
       const userCredential = await signUpUser(email, password);
-
+      
       if (userCredential) {
 
         await addUser(userCredential.user);
-
+        console.log(userCredential);
         resetFormFields();
         navigate('/profile');
       }

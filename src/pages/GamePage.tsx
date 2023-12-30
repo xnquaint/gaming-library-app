@@ -7,17 +7,18 @@ import axios from 'axios';
 import { addComment, addGame, getGameDetails } from '../utils/Firebase';
 import { AuthContext } from '../context/AuthContext';
 import { FaArrowCircleUp } from "react-icons/fa";
-
 import { GameDescription } from '../components/GameDescription/GameDescription';
 import { Comment } from '../components/Comment/Comment';
 import { CommentInterface } from '../types/CommentInterface';
+import { API_KEY } from '../api/games';
+import { ScreenshotInterface } from '../types/ScreenshotInterface';
 
 
 
 export const GamePage = () => {
   const { gameSlug } = useParams();
   const [game, setGame] = useState<GameInterface | null>(null);
-  const [screenshots, setScreenshots] = useState<string[]>([]);
+  const [screenshots, setScreenshots] = useState<ScreenshotInterface[]>([]);
   const [gameData, setGameData] = useState<Document | undefined>(undefined);
   const [commentText, setCommentText] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
@@ -34,7 +35,7 @@ export const GamePage = () => {
     setIsLoading(true);
     const fetchGame = async () => {
       try {
-        const response = await axios.get(`https://api.rawg.io/api/games/${gameSlug}?key=1922aed276bf48afa52ed4b242b8879d`);
+        const response = await axios.get(`https://api.rawg.io/api/games/${gameSlug}?key=${API_KEY}`);
         setGame(response.data);
       } catch (error) {
         console.error('Failed to fetch game:', error);
@@ -43,7 +44,7 @@ export const GamePage = () => {
 
     const fetchScreenshots = async () => {
       try {
-        const response = await axios.get(`https://api.rawg.io/api/games/${gameSlug}/screenshots?key=1922aed276bf48afa52ed4b242b8879d`);
+        const response = await axios.get(`https://api.rawg.io/api/games/${gameSlug}/screenshots?key=${API_KEY}`);
         setScreenshots(response.data.results);
       } catch (error) {
         console.error('Failed to fetch screenshots:', error);
@@ -60,7 +61,6 @@ export const GamePage = () => {
 
   const handleAddComment = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(commentText);
 
     const fetchAddComment = async () => {
       try {

@@ -1,11 +1,11 @@
-import { GameInterface } from '../../types/Game';
+import { GameInterface } from '../../types/GameInterface';
 import parse from 'html-react-parser';
 import placeholder from '../../assets/avatar_placeholder.png';
-import { ScreenshotType } from '../../pages/GamePage';
+import { ScreenshotInterface } from '../../types/ScreenshotInterface';
 
 interface Props {
   game: GameInterface | null;
-  screenshots: ScreenshotType[];
+  screenshots: ScreenshotInterface[];
 }
 
 

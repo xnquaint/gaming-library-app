@@ -22,13 +22,13 @@ import { getFirestore } from "firebase/firestore";
 import { FavoriteGameInterface } from '../types/FavoriteGameInterface';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyARbv6i_-M-cC6RA6zS7_ruYh5mctjkOW8",
-  authDomain: "gaming-library-app.firebaseapp.com",
-  projectId: "gaming-library-app",
-  storageBucket: "gaming-library-app.appspot.com",
-  messagingSenderId: "74492836114",
-  appId: "1:74492836114:web:367832b38f13a9fc4cdbcb",
-  measurementId: "G-HGNM04EL2J"
+  apiKey: "AIzaSyArV8NKqyNQuF3pSPkil7CD-g252QnD78E",
+  authDomain: "gmlb2-617b0.firebaseapp.com",
+  projectId: "gmlb2-617b0",
+  storageBucket: "gmlb2-617b0.appspot.com",
+  messagingSenderId: "874732249679",
+  appId: "1:874732249679:web:dc0e40a1811b14267ec03a",
+  measurementId: "G-YW57ERW81R"
 };
 
 // Initialize Firebase

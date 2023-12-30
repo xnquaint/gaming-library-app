@@ -1,7 +1,7 @@
 import { ApiResponseInterface } from '../types/ApiResponseInterface';
 import { client } from '../utils/FetchClient';
 
-const API_KEY = '1922aed276bf48afa52ed4b242b8879d';
+export const API_KEY = '1922aed276bf48afa52ed4b242b8879d';
 
 export const getGames = (genre: string | null) => { 
   return client.get<ApiResponseInterface>(genre 

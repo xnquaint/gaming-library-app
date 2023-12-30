@@ -82,6 +82,7 @@ function Profile() {
   }, []);
   
   const { favoriteGames } = userData as Document & { displayName?: string, favoriteGames: FavoriteGameInterface[] } || {};
+  const isFavoriteGames = favoriteGames && favoriteGames.length > 0;
 
   return (
     /**
@@ -140,7 +141,7 @@ function Profile() {
       </div>
 
       <div className='flex flex-col items-center'>
-        <h3 className='text-[#ff3f3f] text-3xl my-5'>Favorite Games</h3>
+        <h3 className='text-[#ff3f3f] text-3xl my-5'>{isFavoriteGames ? 'Favorite Games' : 'No favorite games'}</h3>
         <div className='grid grid-cols-4 gap-x-6 mx-5'>
           {favoriteGames && favoriteGames.map((game) => (
             <div className='max-w-1/4' key={game.slug}>

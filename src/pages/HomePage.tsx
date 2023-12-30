@@ -11,6 +11,7 @@ import useLocalStorageState from 'use-local-storage-state';
 import { getFilters } from '../api/games';
 import { useSearch } from '../context/SearchContext';
 import { Pagination } from '../components/Pagination/Pagination';
+import { API_KEY } from '../api/games';
 
 export const HomePage = () => {
   const { currentPage, setCurrentPage } = useSearch();
@@ -59,7 +60,7 @@ export const HomePage = () => {
       Object.entries({ ...filters, search }).filter(([, value]) => value)
     );
 
-    axios.get('https://api.rawg.io/api/games?key=1922aed276bf48afa52ed4b242b8879d', { params: activeFilters })
+    axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`, { params: activeFilters })
       .then(response => {
         setGames(response.data.results);
       })
